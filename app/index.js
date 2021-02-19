@@ -30,8 +30,8 @@ async function main() {
 	app.post('/:deviceIp([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+\)/:state(on|off)', async (req, res) => {
 		const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 		try {
-			console.log(`Turning device at ${req.params.deviceIp} ${deviceOn ? 'on' : 'off'}`);
 			const deviceOn = await setPowerState(req.params.deviceIp, req.params.state === 'on');
+			console.log(`Turning device at ${req.params.deviceIp} ${deviceOn ? 'on' : 'off'}`);
 			res.json({ deviceStatus: req.params.state === 'on' ? 'on' : 'off' });
 		} catch (e) {
 			console.error('Error:', String(e));

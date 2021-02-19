@@ -117,5 +117,4 @@ Unlimited potential!
 I use it in conjunction with [Node-RED](https://nodered.org/) to toggle devices on and
 off under certain conditions.
 
-I also use it for plotting power consumption in Grafana
-([Grafana dashboard](https://grafana.com/grafana/dashboards/12310)) from the metrics endpoint.
+I also use it for plotting power consumption in Grafana from the metrics endpoint.
