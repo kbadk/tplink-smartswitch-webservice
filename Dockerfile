@@ -4,10 +4,10 @@ RUN  apt-get update \
 	&& apt-get install -y wget \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY /app/package*.json /app/
 WORKDIR /app
-RUN npm ci
 
+COPY /app/package*.json /app/
+RUN npm ci
 COPY /app /app
 
 EXPOSE 8080
